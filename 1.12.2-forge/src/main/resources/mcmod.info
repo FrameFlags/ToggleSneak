@@ -1,0 +1,15 @@
+[{
+  "modid": "${mod_id}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/Mobilelize/Revert-Toggle-Sneak",
+  "updateUrl": "",
+  "authorList": ["Sekai0NI0itamio"],
+  "credits": "Concept/reference: Mobilelize (Revert-Toggle-Sneak, MIT). Independent implementation for versions without native toggle sneak.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": [],
+  "side": "CLIENT"
+}]

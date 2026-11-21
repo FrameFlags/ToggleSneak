@@ -1,0 +1,12 @@
+# Local build output — everything is built in GitHub Actions now
+.gradle/
+build/
+run/
+run-data/
+out/
+*.class
+*.jar
+*.log
+.idea/
+*.iml
+.DS_Store
