@@ -17,15 +17,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { variant: 1.12.2-forge, java: '8',  gradle: '4.10.3', mc: '1.12.2', loader: forge,  fabric_api: none }
-          - { variant: 1.20.1-fabric, java: '21', gradle: '9.5.1',  mc: '1.20.1', loader: fabric, fabric_api: 0.92.11 }
-          - { variant: 1.20.1-forge,  java: '17', gradle: '8.14.5', mc: '1.20.1', loader: forge,  fabric_api: none }
+          - { variant: 1.12.2-forge, java: '8',  gradle: '4.10.3', mc: '1.12.2', loader: forge,  fabric_api: none , jdk: '8.0.442+6' }
+          - { variant: 1.20.1-fabric, java: '21', gradle: '9.5.1',  mc: '1.20.1', loader: fabric, fabric_api: 0.92.11 , jdk: '21' }
+          - { variant: 1.20.1-forge,  java: '17', gradle: '8.14.5', mc: '1.20.1', loader: forge,  fabric_api: none , jdk: '17' }
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: ${{ matrix.java }}
+          java-version: ${{ matrix.jdk }}
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: ${{ matrix.gradle }}
@@ -61,7 +61,12 @@ jobs:
           echo "eula=true" > eula.txt
           mkdir -p mods
           cp ../run/mods/*.jar mods/
-          timeout 240 java -jar forge-1.12.2-14.23.5.2847-server.jar nogui > server.log 2>&1 || true
+          echo "=== server directory ==="
+          ls -la
+          SRV_JAR=$(find . -maxdepth 1 -name 'forge-*.jar' ! -name '*installer*' -print -quit)
+          echo "Server jar: $SRV_JAR"
+          if [ -z "$SRV_JAR" ]; then echo "FAIL: no Forge server jar produced"; exit 1; fi
+          timeout 240 java -jar "$SRV_JAR" nogui > server.log 2>&1 || true
           echo "=== server log tail ==="
           tail -40 server.log
           grep -iE 'Done \(' server.log
