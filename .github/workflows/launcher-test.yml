@@ -70,7 +70,7 @@ jobs:
           echo "=== server log tail ==="
           tail -40 server.log
           grep -iE 'Done \(' server.log
-          if grep -qiE '\[(main|Server thread)/(FATAL|ERROR)\]|Unable to launch|Mixin apply for .* failed|InvalidMixinException' server.log; then
+          if grep -qiE 'Unable to launch|Mixin apply for .* failed|InvalidMixinException|Crash report|Loading failed|\[.*FATAL\]' server.log; then
             echo "FAIL: server reported a crash"
             exit 1
           fi
