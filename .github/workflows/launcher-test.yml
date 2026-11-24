@@ -17,10 +17,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { variant: 1.12.2-forge, java: '8',  gradle: '4.10.3', mc: '1.12.2', loader: forge,  fabric_api: none , jdk: '8.0.442+6' }
+          - { variant: 1.12.2-forge, java: '8',  gradle: '4.10.3', mc: '1.12.2', loader: forge,  fabric_api: 0.163.0 , jdk: '8.0.442+6' }
           - { variant: 1.20.1-fabric, java: '21', gradle: '9.5.1',  mc: '1.20.1', loader: fabric, fabric_api: 0.92.11 , jdk: '21' }
-          - { variant: 1.20.1-forge,  java: '17', gradle: '8.14.5', mc: '1.20.1', loader: forge,  fabric_api: none , jdk: '17' }
-          - { variant: 26.3-fabric,  java: '25', gradle: '9.8.2',  mc: '26.3',   loader: fabric, fabric_api: none, jdk: '25' }
+          - { variant: 1.20.1-forge,  java: '17', gradle: '8.14.5', mc: '1.20.1', loader: forge,  fabric_api: 0.163.0 , jdk: '17' }
+          - { variant: 26.3-fabric,  java: '25', gradle: '9.8.2',  mc: '26.3',   loader: fabric, fabric_api: 0.163.0, jdk: '25' }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v5
