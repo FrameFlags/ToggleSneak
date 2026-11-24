@@ -17,6 +17,7 @@ jobs:
           - { variant: 1.12.2-forge, java: '8', gradle: '4.10.3', prefix: togglesneak , jdk: '8.0.442+6' }
           - { variant: 1.20.1-fabric, java: '21', gradle: '9.5.1', prefix: togglesneak , jdk: '21' }
           - { variant: 1.20.1-forge, java: '17', gradle: '8.14.5', prefix: togglesneak , jdk: '17' }
+          - { variant: 26.3-fabric, java: '25', gradle: '9.8.2', prefix: togglesneak , jdk: '25' }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v5
