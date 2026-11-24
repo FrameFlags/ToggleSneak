@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "itamiotogglesneak",
+  "version": "${version}",
+  "name": "Toggle Sneak — Itamio Port",
+  "description": "Client-side toggle sneak: tap the sneak key to stay crouched, tap again to stand up. Independent implementation for versions without a native toggle-sneak feature.",
+  "authors": [
+    "Sekai0NI0itamio"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Mobilelize/Revert-Toggle-Sneak",
+    "sources": "https://github.com/FrameFlags/ToggleSneak",
+    "issues": "https://github.com/FrameFlags/ToggleSneak/issues"
+  },
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "itamio.iamtogglesneak.ToggleSneakClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.20.1",
+    "minecraft": "~26.1.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

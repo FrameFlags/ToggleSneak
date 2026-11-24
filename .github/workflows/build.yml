@@ -47,3 +47,6 @@ jobs:
           path: ${{ matrix.variant }}/build/libs/*.jar
           if-no-files-found: error
           retention-days: 14
+          - { variant: 1.21.1-fabric, java: '21', gradle: '9.5.1', prefix: togglesneak , jdk: '21' }
+          - { variant: 1.21.11-fabric, java: '21', gradle: '9.5.1', prefix: togglesneak , jdk: '21' }
+          - { variant: 26.1.2-fabric, java: '25', gradle: '9.8.2', prefix: togglesneak , jdk: '25' }

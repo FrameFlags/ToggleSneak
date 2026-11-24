@@ -86,3 +86,6 @@ jobs:
             .minecraft/logs/
             **/latest.log
           if-no-files-found: warn
+          - { variant: 1.21.1-fabric,  java: '21', gradle: '9.5.1',  mc: '1.21.1',   loader: fabric, fabric_api: 0.107.0, jdk: '21' }
+          - { variant: 1.21.11-fabric,  java: '21', gradle: '9.5.1',  mc: '1.21.11',   loader: fabric, fabric_api: 0.141.6, jdk: '21' }
+          - { variant: 26.1.2-fabric,  java: '25', gradle: '9.8.2',  mc: '26.1.2',   loader: fabric, fabric_api: 0.155.3, jdk: '25' }
